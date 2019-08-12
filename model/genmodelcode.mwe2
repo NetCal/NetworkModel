@@ -1,0 +1,21 @@
+module GeneratemodelCode
+
+import rg.eclipse.emf.ecore.resource.*
+
+var projectName = "NetCal-NetworkModel"
+var rootPath = ".."
+
+Workflow {
+    bean = org.eclipse.xtext.ecore.EcoreSupport {}
+    bean = org.eclipse.emf.codegen.ecore.xtext.GenModelSupport {}
+    
+    bean = org.eclipse.emf.mwe.utils.StandaloneSetup {
+        platformUri = "${rootPath}"
+        scanClassPath = true
+    }
+    
+    component = org.eclipse.emf.mwe2.ecore.EcoreGenerator {
+        genModel = "platform:/resource/${projectName}/model/network.genmodel"
+        srcPath = "platform:/resource/${projectName}/model/"
+    }
+}

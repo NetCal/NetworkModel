@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/NetCal-NetworkModel/src/main/generated" editDirectory="/NetCal-NetworkModel.edit/src"
+    editorDirectory="/NetCal-NetworkModel.editor/src" templateDirectory="" modelName="Network"
+    rootExtendsInterface="" suppressEMFTypes="true" suppressEMFMetaData="true" suppressEMFModelTags="true"
+    testsDirectory="/NetCal-DNC_model/src/test/java" importerID="org.eclipse.emf.importer.ecore"
+    bundleManifest="false" suppressContainment="true" suppressNotification="true"
+    suppressUnsettable="true" complianceLevel="8.0" copyrightFields="false" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>network.ecore</foreignModel>
+  <genPackages prefix="Network" basePackage="org.networkcalculus.dnc" disposableProviderFactory="true"
+      adapterFactory="false" multipleEditorPages="false" generateModelWizard="false"
+      ecorePackage="network.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="network.ecore#//PropertyName">
+      <genEnumLiterals ecoreEnumLiteral="network.ecore#//PropertyName/INTERNAL_LATENCY"/>
+    </genEnums>
+    <genClasses ecoreClass="network.ecore#//Network">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference network.ecore#//Network/flows"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference network.ecore#//Network/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference network.ecore#//Network/devices"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Network/bandwidth"/>
+    </genClasses>
+    <genClasses ecoreClass="network.ecore#//Flow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference network.ecore#//Flow/paths"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Flow/maxLenght"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Flow/minRetransmissionInterval"/>
+    </genClasses>
+    <genClasses ecoreClass="network.ecore#//Path">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Path/links"/>
+    </genClasses>
+    <genClasses ecoreClass="network.ecore#//Link">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Link/dstPorts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Link/srcPort"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="network.ecore#//Resource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference network.ecore#//Resource/resourcedescriptions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Resource/name"/>
+    </genClasses>
+    <genClasses ecoreClass="network.ecore#//ResourceDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//ResourceDescription/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//ResourceDescription/value"/>
+    </genClasses>
+    <genClasses ecoreClass="network.ecore#//Device">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference network.ecore#//Device/ports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Device/internalLatency"/>
+    </genClasses>
+    <genClasses ecoreClass="network.ecore#//Port">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Port/device"/>
+    </genClasses>
+    <genClasses ecoreClass="network.ecore#//InPort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//InPort/port"/>
+    </genClasses>
+    <genClasses ecoreClass="network.ecore#//OutPort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//OutPort/port"/>
+    </genClasses>
+    <genClasses ecoreClass="network.ecore#//Turn">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Turn/inport"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Turn/outport"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
