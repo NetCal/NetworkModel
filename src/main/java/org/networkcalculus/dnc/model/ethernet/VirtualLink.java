@@ -12,11 +12,11 @@ public class VirtualLink extends FlowImpl {
         return this.getMinRetransmissionInterval();
     }
     
-    public void setPriority(final Priority priority) {
-        
+    public void setVLPriority(final Priority priority) {
+        this.setPriority(priority.intValue());
     }
     
-    public Priority getPriority() {
-        return Priority.valueOf("HIGH");
+    public Priority getVLPriority() {
+        return Priority.valueOf(this.getPriority());
     }
 }
