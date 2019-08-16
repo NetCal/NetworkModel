@@ -8,7 +8,7 @@ public class Switch extends DeviceImpl {
         
     }
     
-    public static final Switch valueOf(final String name) {
+    static final Switch valueOf(final String name) {
         return new Switch(name);
     }
     

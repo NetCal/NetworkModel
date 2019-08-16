@@ -9,7 +9,7 @@ public class PhysicalLink extends LinkImpl {
         this.setDestination(dest);
     }
     
-    public static final PhysicalLink valueOf(final NetworkInterface src, final NetworkInterface dest) {
+    static final PhysicalLink valueOf(final NetworkInterface src, final NetworkInterface dest) {
         return new PhysicalLink(src,dest);
     }
     

@@ -13,7 +13,7 @@ public class VirtualLink extends FlowImpl {
         this.setMaxLenght(maxLength);
     }
 
-    public final static VirtualLink valueOf(final String name, final double bag, final Priority priority, final int maxLength) {
+    final static VirtualLink valueOf(final String name, final double bag, final Priority priority, final int maxLength) {
         return new VirtualLink(name, bag, priority, maxLength);
     }
 
