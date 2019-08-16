@@ -4,7 +4,18 @@ import org.networkcalculus.dnc.model.impl.DeviceImpl;
 
 public class Switch extends DeviceImpl {
     
-    public void addNetworkInterface(final NetworkInterface networkInterface) {
+    private Switch(final String name) {
+        
+    }
+    
+    public static final Switch valueOf(final String name) {
+        return new Switch(name);
+    }
+    
+    public final NetworkInterface addNetworkInterface(final String name) {
+        final NetworkInterface networkInterface = NetworkInterface.valueOf(name);
         this.getPorts().add(networkInterface);
+        networkInterface.setDevice(this);
+        return networkInterface;
     }
 }
