@@ -70,6 +70,10 @@ public class EthernetNetwork extends NetworkImpl {
         return es;
     }
     
+    /**
+     * A {@link List} of all end-systems in the network
+     * @return a {@link ArrayList} of all end-systems within the network
+     */
     public final List<EndSystem> getEndSystems() {
        final List<EndSystem> result = new ArrayList<EndSystem>();
        for (final var device : this.getDevices()) {
@@ -94,6 +98,10 @@ public class EthernetNetwork extends NetworkImpl {
         return sw;
     }
     
+    /**
+     * A {@link List} of all switches in the network
+     * @return a {@link ArrayList} of all switches within the network
+     */
     public final List<Switch> getSwitches() {
         final List<Switch> result = new ArrayList<Switch>();
         for (final var device : this.getDevices()) {
@@ -104,6 +112,11 @@ public class EthernetNetwork extends NetworkImpl {
         return result;
      }
     
+    /** Adds a new link between two network interfaces
+     * @param src {@link NetworkInterface} the source
+     * @param dest {@link NetworkInterface} the destination
+     * @return a new {@link NetworkInterface} object
+     */
     public final PhysicalLink addPhysicalLink(final NetworkInterface src, final NetworkInterface dest) {
         if (src == null || dest == null) {
             return null;
@@ -113,6 +126,10 @@ public class EthernetNetwork extends NetworkImpl {
         return link;
     }
     
+    /**
+     * A {@link List} of all physical links in the network
+     * @return {@link ArrayList} of {@link PhysicalLink}
+     */
     public final List<PhysicalLink> getPhysicalLinks() {
         final List<PhysicalLink> result = new ArrayList<PhysicalLink>();
         for (final var link : this.getLinks()) {

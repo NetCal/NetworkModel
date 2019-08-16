@@ -18,6 +18,11 @@ public class NetworkInterface extends PortImpl {
         outPort.setName(name + OUT);
     }
     
+    /**
+     * Static constructor
+     * @param name name of the object
+     * @return a new {@link NetworkInterface} object
+     */
     static final NetworkInterface valueOf(final String name) {
         return new NetworkInterface(name);
     }

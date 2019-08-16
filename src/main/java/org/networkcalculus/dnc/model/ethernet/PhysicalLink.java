@@ -9,15 +9,21 @@ public class PhysicalLink extends LinkImpl {
         this.setDestination(dest);
     }
     
+    /** 
+     * A new link between two network interfaces
+     * @param src {@link NetworkInterface} the source
+     * @param dest {@link NetworkInterface} the destination
+     * @return a new {@link NetworkInterface} object
+     */
     static final PhysicalLink valueOf(final NetworkInterface src, final NetworkInterface dest) {
         return new PhysicalLink(src,dest);
     }
     
-    public final void setSource(final NetworkInterface networkInterface) {
+    private final void setSource(final NetworkInterface networkInterface) {
         this.setSrcPort(networkInterface.getOutPort());
     }
     
-    public final void setDestination(final NetworkInterface networkInterface) {
+    private final void setDestination(final NetworkInterface networkInterface) {
         this.getDstPorts().add(networkInterface.getInPort());
     }
 }

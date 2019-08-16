@@ -23,7 +23,7 @@ public class EndSystem extends DeviceImpl {
     }
     
     /**
-     * Add a new network interface/port to end-ssytem
+     * Add a new network interface/port to end-system
      * @param name the name of the object
      * @return {@link NetworkInterface} a new network interface
      */
