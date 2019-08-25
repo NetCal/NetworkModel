@@ -15,7 +15,9 @@ public class NetworkInterface extends PortImpl {
     
     private NetworkInterface(final String name) {
         inPort.setName(name + IN);
+        inPort.setPort(this);
         outPort.setName(name + OUT);
+        outPort.setPort(this);
     }
     
     /**

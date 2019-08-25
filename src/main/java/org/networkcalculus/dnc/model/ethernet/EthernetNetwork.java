@@ -137,4 +137,13 @@ public class EthernetNetwork extends NetworkImpl {
         }
         return result;
     }
+    
+    public String toString() {
+        final StringBuilder result = new StringBuilder();
+        for (final var vl : this.getFlows()) {
+            result.append(vl.toString());
+            result.append("\n");
+        }
+        return result.toString();
+    }
 }

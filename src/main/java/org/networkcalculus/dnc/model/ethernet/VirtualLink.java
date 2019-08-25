@@ -82,4 +82,20 @@ public class VirtualLink extends FlowImpl {
         }
         return result;
     }
+    
+    public String toString() {
+        final StringBuilder result = new StringBuilder();
+        result.append(this.getName());
+        result.append("\n");
+        for (final var path : this.getPaths()) {
+            for (final var link : path.getLinks()) {
+                result.append(link.getSrcPort().getPort().getDevice().getName());
+                result.append("(" + link.getSrcPort().getName() + ")");
+                result.append(" - ");
+            }
+            result.delete(result.length() - 3, result.length());
+            result.append("\n");
+        }
+        return result.toString();
+    }
 }

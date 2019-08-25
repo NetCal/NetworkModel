@@ -1,11 +1,13 @@
 package org.networkcalculus.dnc.model.ethernet;
 
+import java.util.Objects;
+
 import org.networkcalculus.dnc.model.impl.DeviceImpl;
 
 public class Switch extends DeviceImpl {
     
     private Switch(final String name) {
-        
+        this.setName(name);
     }
     
     /**
@@ -28,4 +30,5 @@ public class Switch extends DeviceImpl {
         networkInterface.setDevice(this);
         return networkInterface;
     }
+    
 }

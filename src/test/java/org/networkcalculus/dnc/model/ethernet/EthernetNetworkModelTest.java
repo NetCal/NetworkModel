@@ -47,7 +47,7 @@ class EthernetNetworkModelTest {
         NetworkInterface sw1p1 = sw1.addNetworkInterface("sw1p1");
         NetworkInterface sw1p2 = sw1.addNetworkInterface("sw1p2");
         NetworkInterface sw1p3 = sw1.addNetworkInterface("sw1p3");
-
+        
         PhysicalLink es1sw1 = network.addPhysicalLink(es1p1, sw1p1);
         PhysicalLink es2sw1 = network.addPhysicalLink(es2p1, sw1p2);
 
@@ -96,7 +96,7 @@ class EthernetNetworkModelTest {
         
         // VL3
         VirtualLink vl3 = network.addVirtualLink("VL3", 5e-2, Priority.LOW, 1000);
-        vl3.addPath(es3sw2, sw2sw3, sw3es6);
+        vl3.addPath(es3sw2, sw2sw3, sw3es5);
         vl3.addPath(es3sw2, sw2sw5, sw5es7);
         
         // VL4
@@ -104,13 +104,14 @@ class EthernetNetworkModelTest {
         vl4.addPath(es3sw2, sw2sw5, sw5es7);
       
         // VL5
-        VirtualLink vl5 = network.addVirtualLink("VL5", 3e-1, Priority.LOW, 1000);
+        VirtualLink vl5 = network.addVirtualLink("VL5", 3e-2, Priority.LOW, 1000);
         vl5.addPath(es4sw4, sw4sw5, sw5es7);
         
         // VL6
         VirtualLink vl6 =network.addVirtualLink("VL6", 5e-2, Priority.LOW, 1000);
         vl6.addPath(es4sw4, sw4sw5, sw5es8);
-    
+        
+        System.out.println(network.toString());
     }
 
 }
