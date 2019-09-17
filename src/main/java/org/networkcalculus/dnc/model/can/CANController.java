@@ -20,7 +20,7 @@ public class CANController extends PortImpl {
         outPort.setPort(this);
     }
     
-    public static final CANController valueOf(final String name) {
+    static final CANController valueOf(final String name) {
         return new CANController(name);
     }
     
