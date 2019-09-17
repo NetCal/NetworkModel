@@ -11,4 +11,8 @@ public class ECU extends DeviceImpl {
     public static final ECU valueOf(final String name) {
         return new ECU(name);
     }
+    
+    public CANController addController(final String name) {
+        
+    }
 }
