@@ -13,6 +13,6 @@ public class ECU extends DeviceImpl {
     }
     
     public CANController addController(final String name) {
-        
+        this.getPorts().add(e)
     }
 }
