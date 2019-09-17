@@ -22,4 +22,6 @@ public class CANBus extends DeviceImpl {
     public static final CANBus valueOf(final String name, final double bandwidth) {
         return new CANBus(name, bandwidth);
     }
+    
+    public final ECU addECU() 
 }

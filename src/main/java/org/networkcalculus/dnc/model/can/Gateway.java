@@ -11,4 +11,11 @@ public class Gateway extends DeviceImpl {
     public static final Gateway valueOf(final String name) {
         return new Gateway(name);
     }
+    
+    public CANController addController(final String name) {
+        CANController controller = CANController.valueOf(name);
+        controller.setDevice(this);
+        this.getPorts().add(controller);
+        return controller;
+    }
 }

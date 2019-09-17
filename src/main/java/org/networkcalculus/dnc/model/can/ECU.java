@@ -13,6 +13,12 @@ public class ECU extends DeviceImpl {
     }
     
     public CANController addController(final String name) {
-        this.getPorts().add(e)
+        if (this.getPorts().size() == 1) {
+            throw new IllegalStateException("ECU can be connected to only one CANbus");
+        }
+        CANController controller = CANController.valueOf(name);
+        controller.setDevice(this);
+        this.getPorts().add(controller);
+        return controller;
     }
 }
