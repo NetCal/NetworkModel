@@ -5,6 +5,7 @@ import org.networkcalculus.dnc.model.NetworkFactory;
 import org.networkcalculus.dnc.model.OutPort;
 import org.networkcalculus.dnc.model.impl.PortImpl;
 
+//TODO - add controller properties
 public class CANController extends PortImpl {
     
     private static final String OUT = "OUT";
