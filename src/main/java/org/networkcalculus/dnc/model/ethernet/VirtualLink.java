@@ -63,6 +63,7 @@ public class VirtualLink extends FlowImpl {
         Path path = NetworkFactory.INSTANCE.createPath();
         for (var link : links) {
             path.getLinks().add(link);
+            ((NetworkInterface)link.getSrcPort().getPort()).addVirtualLink(this);
         }
         this.getPaths().add(path);
     }
