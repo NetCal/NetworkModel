@@ -51,6 +51,10 @@ public class CANBus extends DeviceImpl {
         return new CANBus(name, bandwidth);
     }
     
+    /**
+     * Connects an {@link ECU} to the {@link CANBus}
+     * @param ecu - the ECU
+     */
     public final void connectECU(final ECU ecu) {
         CANController controller = ecu.addController(ecu.getName()+ "_" + this.getName() + "_" + "controller");
         this.addController(controller);
@@ -76,6 +80,15 @@ public class CANBus extends DeviceImpl {
         this.links.put(ecu, ecuConnections);
     }
     
+    /**
+     * Adds a {@link CANFrame} to the {@link CANBus} with one publisher and several subscribers
+     * even from other buses
+     * @param name - the name of the frame must be unique within the bus
+     * @param id - the id of the frame
+     * @param source - the publisher
+     * @param destinations - the list of subscribers
+     * @return - the {@link CANFrame} instance
+     */
     public final CANFrame addFrame(final String name, int id, final ECU source, final List<ECU> destinations) {
         if (destinations == null || destinations.isEmpty()) {
             throw new IllegalArgumentException("Destination cannot be null or empty");

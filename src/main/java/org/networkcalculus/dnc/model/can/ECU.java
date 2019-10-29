@@ -1,20 +1,33 @@
 package org.networkcalculus.dnc.model.can;
 
-import java.util.List;
-
 import org.networkcalculus.dnc.model.impl.DeviceImpl;
 
+/**
+ * Class representation of an ECU
+ * @author matyesz
+ *
+ */
 public class ECU extends DeviceImpl {
     
-    ECU(final String name) {
+    private ECU(final String name) {
         this.setName(name);
     }
     
-    public static final ECU valueOf(final String name) {
+    /**
+     * Static constructor
+     * @param name - the name of the ECU must be unique within the network
+     * @return the {@link ECU} instance
+     */
+    static final ECU valueOf(final String name) {
         return new ECU(name);
     }
     
-    public CANController addController(final String name) {
+    /**
+     * Adds a new CAN controller to the ECU
+     * @param name - the name of the controller, must be unique within the ECU
+     * @return the {@link CANController} instance
+     */
+    CANController addController(final String name) {
         CANController controller = CANController.valueOf(name);
         controller.setDevice(this);
         this.getPorts().add(controller);
