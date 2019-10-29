@@ -51,7 +51,12 @@ public class CANBus extends DeviceImpl {
         return new CANBus(name, bandwidth);
     }
     
-    public final void addController(final CANController controller) {
+    public final void connectECU(final ECU ecu) {
+        CANController controller = ecu.addController(ecu.getName()+ "_" + this.getName() + "_" + "controller");
+        this.addController(controller);
+    }
+    
+    private final void addController(final CANController controller) {
         final ECU ecu = (ECU)controller.getDevice();
         if (ecu == null) {
             throw new IllegalStateException("ECU is not assigned to controller");

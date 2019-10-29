@@ -21,6 +21,12 @@ public class CANNetwork extends NetworkImpl {
         return result;
     }
     
+    final public ECU addECU(final String name) {
+        final ECU result = ECU.valueOf(name);
+        this.getDevices().add(result);
+        return result;
+    }
+    
     final public List<CANBus> getCANBuses() {
         List<CANBus> result = new ArrayList<CANBus>();
         for (final var device : this.getDevices()) {
