@@ -54,9 +54,9 @@ public class CANBus extends DeviceImpl {
     /**
      * Connects an {@link ECU} to the {@link CANBus}
      * @param ecu - the ECU
+     * @param type - the controller behaviour
      */
-    public final void connectECU(final ECU ecu) {
-        CANController controller = ecu.addController(ecu.getName()+ "_" + this.getName() + "_" + "controller");
+    public final void connectECU(final CANController controller) {
         this.addController(controller);
     }
     

@@ -18,12 +18,14 @@ public class CANController extends PortImpl {
     
     private InPort inPort = NetworkFactory.INSTANCE.createInPort();
     private OutPort outPort = NetworkFactory.INSTANCE.createOutPort();
+    private ECANControllerType type = ECANControllerType.PI;
     
-    private CANController(final String name) {
+    private CANController(final String name, final ECANControllerType type) {
         inPort.setName(name + IN);
         inPort.setPort(this);
         outPort.setName(name + OUT);
         outPort.setPort(this);
+        this.type  = type;
     }
     
     /**
@@ -31,8 +33,8 @@ public class CANController extends PortImpl {
      * @param name - the name of the controller
      * @return the {@link CANController} instance
      */
-    static final CANController valueOf(final String name) {
-        return new CANController(name);
+    static final CANController valueOf(final String name, final ECANControllerType type) {
+        return new CANController(name, type);
     }
     
     /**
@@ -49,5 +51,13 @@ public class CANController extends PortImpl {
      */
     final OutPort getOutPort() {
         return this.outPort;
+    }
+    
+    /**
+     * Returns controller behaviour
+     * @return {@link ECANControllerType} the behaviour
+     */
+    final public ECANControllerType getType() {
+        return this.type;
     }
 }

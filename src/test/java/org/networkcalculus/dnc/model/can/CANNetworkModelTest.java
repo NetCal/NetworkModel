@@ -12,10 +12,12 @@ class CANNetworkModelTest {
         CANBus bus = network.addCANBus("bus", 125000);
         
         ECU publisher = network.addECU("publisher");
-        bus.connectECU(publisher);
+        CANController controller1 = publisher.addController("controller1", ECANControllerType.NON_PI);
+        bus.connectECU(controller1);
         
         ECU subscriber = network.addECU("subscriber");
-        bus.connectECU(subscriber);
+        CANController controller2 = subscriber.addController("controller1", ECANControllerType.NON_PI);
+        bus.connectECU(controller2);
         
         bus.addFrame("frame", 1, publisher, Arrays.asList(subscriber));
     }

@@ -25,10 +25,11 @@ public class ECU extends DeviceImpl {
     /**
      * Adds a new CAN controller to the ECU
      * @param name - the name of the controller, must be unique within the ECU
+     * @param type - the type of the CAN controller
      * @return the {@link CANController} instance
      */
-    CANController addController(final String name) {
-        CANController controller = CANController.valueOf(name);
+    public CANController addController(final String name, final ECANControllerType type) {
+        CANController controller = CANController.valueOf(this.getName() + "_" + name, type);
         controller.setDevice(this);
         this.getPorts().add(controller);
         return controller;
