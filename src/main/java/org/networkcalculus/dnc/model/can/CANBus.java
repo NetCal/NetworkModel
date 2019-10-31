@@ -18,7 +18,6 @@ import org.networkcalculus.dnc.model.impl.NetworkImpl;
  * @author matyesz
  *
  */
-//TODO: what if CANBus is a Network????
 public class CANBus extends NetworkImpl {
     
     private final Port port = NetworkFactory.INSTANCE.createPort();
