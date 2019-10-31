@@ -11,22 +11,24 @@ import org.networkcalculus.dnc.model.NetworkFactory;
 import org.networkcalculus.dnc.model.OutPort;
 import org.networkcalculus.dnc.model.Path;
 import org.networkcalculus.dnc.model.Port;
-import org.networkcalculus.dnc.model.impl.DeviceImpl;
+import org.networkcalculus.dnc.model.impl.NetworkImpl;
 
 /**
  * Class representing a Controller Area Network bus.
  * @author matyesz
  *
  */
-public class CANBus extends DeviceImpl {
+//TODO: what if CANBus is a Network????
+public class CANBus extends NetworkImpl {
     
     private final Port port = NetworkFactory.INSTANCE.createPort();
     private final InPort inPort = NetworkFactory.INSTANCE.createInPort();
     private final OutPort outPort = NetworkFactory.INSTANCE.createOutPort();
-    private final Map<ECU, List<Link>> links = new HashMap<>(); 
+    private final Map<ECU, List<Link>> links = new HashMap<>();
     
     private CANBus(final String name, final double bandwidth) {
         this.setName(name);
+        this.bandwidth = bandwidth;
         this.createInPort();
         this.createOutPort();
     }
@@ -93,6 +95,9 @@ public class CANBus extends DeviceImpl {
         if (destinations == null || destinations.isEmpty()) {
             throw new IllegalArgumentException("Destination cannot be null or empty");
         }
+        if (this.containsFrame(id)) {
+            throw new IllegalStateException("Frame with same id already exists on the bus");
+        }
         final CANFrame frame = CANFrame.valueOf(name, id);
         final Link inLink = links.get(source).get(0);
         for (final var destination : destinations) {
@@ -101,6 +106,23 @@ public class CANBus extends DeviceImpl {
             path.getLinks().add(links.get(destination).get(1));
             frame.getPaths().add(path);
         }
+        this.getFlows().add(frame);
         return frame;
     }
+    
+    private boolean containsFrame(final int id) {
+        return this.getFlows().stream().filter(frame -> frame.getPriority() == id).count() == 1;
+    }
+    /**
+     * Returns all frames transmitted on the given bus
+     * @return {@link ArrayList} of frames or empty list
+     */
+    public final List<CANFrame> getFrames() {
+        List<CANFrame> result = new ArrayList<>();
+        for (final var flow : this.getFlows()) {
+            result.add((CANFrame)flow);
+        }
+        return result;
+    }
+    
 }

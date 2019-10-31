@@ -18,7 +18,7 @@ public class ECU extends DeviceImpl {
      * @param name - the name of the ECU must be unique within the network
      * @return the {@link ECU} instance
      */
-    static final ECU valueOf(final String name) {
+    public static final ECU valueOf(final String name) {
         return new ECU(name);
     }
     

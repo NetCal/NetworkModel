@@ -7,7 +7,7 @@ import org.networkcalculus.dnc.model.impl.FlowImpl;
  * @author matyesz
  *
  */
-public class CANFrame extends FlowImpl {
+public class CANFrame extends FlowImpl implements Comparable<CANFrame> {
     
     private CANFrame(final String name, int id) {
         this.setName(name);
@@ -22,5 +22,10 @@ public class CANFrame extends FlowImpl {
      */
     public static CANFrame valueOf(final String name, int id) {
         return new CANFrame(name, id);
+    }
+
+    @Override
+    public int compareTo(CANFrame o) {
+        return Integer.valueOf(this.getPriority()).compareTo(o.getPriority());
     }
 }

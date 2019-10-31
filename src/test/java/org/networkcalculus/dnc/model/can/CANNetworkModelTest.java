@@ -8,14 +8,13 @@ class CANNetworkModelTest {
 
     @Test
     void test() {
-        CANNetwork network = CANNetwork.valueOf("CAN_network");
-        CANBus bus = network.addCANBus("bus", 125000);
+        CANBus bus = CANBus.valueOf("bus", 125000);
         
-        ECU publisher = network.addECU("publisher");
+        ECU publisher = ECU.valueOf("publisher");
         CANController controller1 = publisher.addController("controller1", ECANControllerType.NON_PI);
         bus.connectECU(controller1);
         
-        ECU subscriber = network.addECU("subscriber");
+        ECU subscriber = ECU.valueOf("subscriber");
         CANController controller2 = subscriber.addController("controller1", ECANControllerType.NON_PI);
         bus.connectECU(controller2);
         
