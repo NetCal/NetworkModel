@@ -24,6 +24,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference network.ecore#//Flow/paths"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Flow/maxLenght"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Flow/minRetransmissionInterval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Flow/offset"/>
     </genClasses>
     <genClasses ecoreClass="network.ecore#//Path">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Path/links"/>
