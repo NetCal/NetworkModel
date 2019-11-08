@@ -9,8 +9,9 @@ import org.networkcalculus.dnc.model.impl.DeviceImpl;
  */
 public class ECU extends DeviceImpl {
     
-    private ECU(final String name) {
+    private ECU(final String name, final double internalLatency) {
         this.setName(name);
+        this.setInternalLatency(internalLatency);
     }
     
     /**
@@ -18,10 +19,14 @@ public class ECU extends DeviceImpl {
      * @param name - the name of the ECU must be unique within the network
      * @return the {@link ECU} instance
      */
-    public static final ECU valueOf(final String name) {
-        return new ECU(name);
+    public static final ECU valueOf(final String name, final double internalLatency) {
+        return new ECU(name, internalLatency);
     }
     
+    
+    public static final ECU valueOf(final String name) {
+        return new ECU(name, 0.0);
+    }
     /**
      * Adds a new CAN controller to the ECU
      * @param name - the name of the controller, must be unique within the ECU

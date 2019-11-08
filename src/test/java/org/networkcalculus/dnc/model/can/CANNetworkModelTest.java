@@ -10,11 +10,11 @@ class CANNetworkModelTest {
     void test() {
         CANBus bus = CANBus.valueOf("bus", 125000);
         
-        ECU publisher = ECU.valueOf("publisher");
+        ECU publisher = ECU.valueOf("publisher", 0.0);
         CANController controller1 = publisher.addController("controller1", ECANControllerType.NON_PI);
         bus.connectECU(controller1);
         
-        ECU subscriber = ECU.valueOf("subscriber");
+        ECU subscriber = ECU.valueOf("subscriber", 0.0);
         CANController controller2 = subscriber.addController("controller1", ECANControllerType.NON_PI);
         bus.connectECU(controller2);
         
