@@ -1,9 +1,36 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
+  <name>NetworkCalculus.org Network Model</name>
+  <description>Generic model to represent all types of networks and network element attributes independent of the protocol.</description>
+  <url>model.networkcalculus.org</url>
+    
   <groupId>org.networkcalculus.model</groupId>
   <artifactId>NetCal-NetworkModel</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
+  
+  <licenses>
+    <license>
+        <name>GNU General Lesser Public License (LGPL) version 2.1</name>
+        <url>https://www.gnu.org/licenses/lgpl-2.1.txt</url>
+    </license>
+  </licenses>
+  
+  <developers>
+        <developer>
+            <name>Zoltan Matyas</name>
+            <email>matyesz79@gmail.com</email>
+            <organization>Freelancer</organization>
+            <organizationUrl>NA</organizationUrl>
+        </developer>
+    </developers>
 
+    <scm>
+        <connection>scm:git:git://github.com/NetCal/NetworkModel.git</connection>
+        <developerConnection>scm:git:ssh://github.com/NetCal/NetworkModel.git</developerConnection>
+        <url>https://github.com/NetCal/NetworkModel/tree/master</url>
+    </scm>
+    
   <properties>
         <maven.compiler.source>12</maven.compiler.source>
         <maven.compiler.target>12</maven.compiler.target>
@@ -12,7 +39,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-
+    
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+    
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
@@ -123,6 +161,73 @@
                         <version>[2.15.0, 3)</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <!-- Dependencies for Maven deployment -->
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                <tags>
+                    <tag>
+                        <name>generated</name>
+                        <!-- The value X makes javadoc ignoring the tag -->
+                        <placement>a</placement>
+                        <head>Generated class</head>
+                    </tag>
+                    <tag>
+                        <name>ordered</name>
+                        <!-- The value X makes javadoc ignoring the tag -->
+                        <placement>X</placement>
+                    </tag>
+                </tags>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

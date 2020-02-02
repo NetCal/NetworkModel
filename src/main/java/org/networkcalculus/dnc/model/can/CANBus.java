@@ -54,8 +54,8 @@ public class CANBus extends NetworkImpl {
     
     /**
      * Connects an {@link ECU} to the {@link CANBus}
-     * @param ecu - the ECU
-     * @param type - the controller behaviour
+     * 
+     * @param controller - the ECU
      */
     public final void connectECU(final CANController controller) {
         this.addController(controller);

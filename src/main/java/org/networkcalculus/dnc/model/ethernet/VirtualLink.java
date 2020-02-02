@@ -3,6 +3,7 @@ package org.networkcalculus.dnc.model.ethernet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.networkcalculus.dnc.model.Link;
 import org.networkcalculus.dnc.model.NetworkFactory;
 import org.networkcalculus.dnc.model.Path;
 import org.networkcalculus.dnc.model.impl.FlowImpl;
