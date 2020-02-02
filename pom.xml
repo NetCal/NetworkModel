@@ -26,8 +26,8 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/NetCal/NetworkModel.git</connection>
-        <developerConnection>scm:git:ssh://github.com/NetCal/NetworkModel.git</developerConnection>
+        <connection>scm:git:git@github.com:NetCal/NetworkModel.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/NetCal/NetworkModel.git</developerConnection>
         <url>https://github.com/NetCal/NetworkModel/tree/master</url>
     </scm>
     
