@@ -7,7 +7,7 @@
     
   <groupId>org.networkcalculus.model</groupId>
   <artifactId>NetCal-NetworkModel</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
   
   <licenses>
     <license>
@@ -29,8 +29,7 @@
         <connection>scm:git:git@github.com:NetCal/NetworkModel.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/NetCal/NetworkModel.git</developerConnection>
         <url>https://github.com/NetCal/NetworkModel/tree/master</url>
-      <tag>HEAD</tag>
-  </scm>
+    </scm>
     
   <properties>
         <maven.compiler.source>12</maven.compiler.source>
