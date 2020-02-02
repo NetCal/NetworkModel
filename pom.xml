@@ -7,7 +7,7 @@
     
   <groupId>org.networkcalculus.model</groupId>
   <artifactId>NetCal-NetworkModel</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   
   <licenses>
     <license>
@@ -229,7 +229,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+            <!-- plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
@@ -239,7 +239,7 @@
                     <releaseProfiles>release</releaseProfiles>
                     <goals>deploy</goals>
                 </configuration>
-            </plugin>
+            </plugin-->
         </plugins>
     </build>
 
