@@ -16,7 +16,10 @@ public class ECU extends DeviceImpl {
     
     /**
      * Static constructor
-     * @param name - the name of the ECU must be unique within the network
+     * 
+     * @param name            - the name of the ECU must be unique within the
+     *                        network
+     * @param internalLatency - the internal technical latency of the ECU
      * @return the {@link ECU} instance
      */
     public static final ECU valueOf(final String name, final double internalLatency) {
