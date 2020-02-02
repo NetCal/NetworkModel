@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_6U2KAFWzEeiP5aZz9HDqpg" selectedViews="_6X2asFWzEeiP5aZz9HDqpg _YUcKQFW0EeiP5aZz9HDqpg _YUi38FW0EeiP5aZz9HDqpg _YUktIFW0EeiP5aZz9HDqpg" version="14.1.0.201810161215">
+  <viewpoint:DAnalysis uid="_6U2KAFWzEeiP5aZz9HDqpg" selectedViews="_6X2asFWzEeiP5aZz9HDqpg _YUcKQFW0EeiP5aZz9HDqpg _YUi38FW0EeiP5aZz9HDqpg _YUktIFW0EeiP5aZz9HDqpg" version="14.3.0.201909031200">
     <semanticResources>discoDNC_model.ecore</semanticResources>
     <semanticResources>discoDNC_model.genmodel</semanticResources>
     <semanticResources>network.ecore</semanticResources>
     <semanticResources>network.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_6X2asFWzEeiP5aZz9HDqpg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ZGw_FVW0EeiP5aZz9HDqpg" name="network class diagram" repPath="#_ZGw_EFW0EeiP5aZz9HDqpg">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ZGw_FVW0EeiP5aZz9HDqpg" name="network class diagram" repPath="#_ZGw_EFW0EeiP5aZz9HDqpg" changeId="6b3f4132-6146-4f01-96ed-4a8ee5bca967">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="network.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -22,7 +22,7 @@
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Generation']"/>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram uid="_ZGw_EFW0EeiP5aZz9HDqpg" name="network class diagram">
+  <diagram:DSemanticDiagram uid="_ZGw_EFW0EeiP5aZz9HDqpg">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_ZGw_EVW0EeiP5aZz9HDqpg" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_ZGw_ElW0EeiP5aZz9HDqpg">
         <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_7UksMFW0EeiP5aZz9HDqpg" sourceArrow="FillDiamond" routingStyle="manhattan">
@@ -102,6 +102,10 @@
             <children xmi:type="notation:Node" xmi:id="_iUZT8AH-EeqWRMb97AWJlw" type="3010" element="_iTriQAH-EeqWRMb97AWJlw">
               <styles xmi:type="notation:FontStyle" xmi:id="_iUZ7AAH-EeqWRMb97AWJlw" fontColor="2697711" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_iUZ7AQH-EeqWRMb97AWJlw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_DP6-gC8dEeqlYPYMXhFtMA" type="3010" element="_DO8uIS8dEeqlYPYMXhFtMA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_DP6-gS8dEeqlYPYMXhFtMA" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_DP6-gi8dEeqlYPYMXhFtMA"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_31Iw4lW0EeiP5aZz9HDqpg"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_31Iw41W0EeiP5aZz9HDqpg"/>
@@ -592,6 +596,14 @@
         <semanticElements xmi:type="ecore:EAttribute" href="network.ecore#//Flow/offset"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_oRmSMQH-EeqWRMb97AWJlw" labelAlignment="LEFT" description="_WfReEbtHEemAdfxn95DvrQ">
           <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_DO8uIS8dEeqlYPYMXhFtMA" name="priority : EInt" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="network.ecore#//Flow/priority"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="network.ecore#//Flow/priority"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_DO_xcC8dEeqlYPYMXhFtMA" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
