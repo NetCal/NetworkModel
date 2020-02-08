@@ -1,4 +1,4 @@
-package org.networkcalculus.dnc.model.ethernet;
+package org.networkcalculus.dnc.model.ethernet.rc;
 
 /**
  * Class representing the Priorities for VLs

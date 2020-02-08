@@ -14,7 +14,7 @@ public class NetworkInterface extends PortImpl {
     private static final String OUT = "OUT";
     private static final String IN = "IN";
     
-    private final Set<VirtualLink> vls = new HashSet<VirtualLink>();
+    private final Set<VirtualLink> vls = new HashSet<>();
     private InPort inPort = NetworkFactory.INSTANCE.createInPort();
     private OutPort outPort = NetworkFactory.INSTANCE.createOutPort();
     

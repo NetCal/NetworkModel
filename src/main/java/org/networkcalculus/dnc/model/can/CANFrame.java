@@ -1,5 +1,6 @@
 package org.networkcalculus.dnc.model.can;
 
+import org.networkcalculus.dnc.model.FlowClass;
 import org.networkcalculus.dnc.model.impl.FlowImpl;
 
 /**
@@ -12,6 +13,7 @@ public class CANFrame extends FlowImpl implements Comparable<CANFrame> {
     private CANFrame(final String name, int id) {
         this.setName(name);
         this.setPriority(id);
+	this.setFlowClass(FlowClass.CAN);
     }
     
     /**

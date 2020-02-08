@@ -1,6 +1,7 @@
 package org.networkcalculus.dnc.model.ethernet;
 
 import org.junit.jupiter.api.Test;
+import org.networkcalculus.dnc.model.ethernet.rc.Priority;
 
 class EthernetNetworkModelTest {
 
@@ -87,28 +88,28 @@ class EthernetNetworkModelTest {
         PhysicalLink sw5es8 = network.addPhysicalLink(sw5p4, es8p1);
 
         // VL1
-        VirtualLink vl1 = network.addVirtualLink("VL1", 1e-1, Priority.LOW, 1000);
+	VirtualLink vl1 = network.addRCVirtualLink("VL1", 1e-1, Priority.LOW, 1000);
         vl1.addPath(es1sw1, sw1sw3, sw3es5);
         
         // VL2
-        VirtualLink vl2 = network.addVirtualLink("VL2", 1e-1, Priority.LOW, 1000);
+	VirtualLink vl2 = network.addRCVirtualLink("VL2", 1e-1, Priority.LOW, 1000);
         vl2.addPath(es2sw1, sw1sw3, sw3es6);
         
         // VL3
-        VirtualLink vl3 = network.addVirtualLink("VL3", 5e-2, Priority.LOW, 1000);
+	VirtualLink vl3 = network.addRCVirtualLink("VL3", 5e-2, Priority.LOW, 1000);
         vl3.addPath(es3sw2, sw2sw3, sw3es5);
         vl3.addPath(es3sw2, sw2sw5, sw5es7);
         
         // VL4
-        VirtualLink vl4 = network.addVirtualLink("VL4", 3e-2, Priority.LOW, 1000);
+	VirtualLink vl4 = network.addRCVirtualLink("VL4", 3e-2, Priority.LOW, 1000);
         vl4.addPath(es3sw2, sw2sw5, sw5es7);
       
         // VL5
-        VirtualLink vl5 = network.addVirtualLink("VL5", 3e-2, Priority.LOW, 1000);
+	VirtualLink vl5 = network.addRCVirtualLink("VL5", 3e-2, Priority.LOW, 1000);
         vl5.addPath(es4sw4, sw4sw5, sw5es7);
         
         // VL6
-        VirtualLink vl6 =network.addVirtualLink("VL6", 5e-2, Priority.LOW, 1000);
+	VirtualLink vl6 = network.addRCVirtualLink("VL6", 5e-2, Priority.LOW, 1000);
         vl6.addPath(es4sw4, sw4sw5, sw5es8);
         
         System.out.println(network.toString());

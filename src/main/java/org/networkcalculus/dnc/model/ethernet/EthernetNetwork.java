@@ -3,6 +3,10 @@ package org.networkcalculus.dnc.model.ethernet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.networkcalculus.dnc.model.ethernet.avb.AVBClass;
+import org.networkcalculus.dnc.model.ethernet.avb.AVBVirtualLink;
+import org.networkcalculus.dnc.model.ethernet.rc.Priority;
+import org.networkcalculus.dnc.model.ethernet.rc.RCVirtualLink;
 import org.networkcalculus.dnc.model.impl.NetworkImpl;
 
 /**
@@ -33,25 +37,36 @@ public class EthernetNetwork extends NetworkImpl {
      * @param bag the retransmission rate of the VL in seconds
      * @param priority priority of the VL
      * @param maxLength the maximum packet length on the VL in bits
-     * @return new {@link VirtualLink} object
+     * @return new {@link RCVirtualLink} object
      */
-    public final VirtualLink addVirtualLink(final String name, final double bag, final Priority priority, final int maxLength) {
+    public final VirtualLink addRCVirtualLink(final String name, final double bag, final Priority priority,
+	    final int maxLength) {
         if (name == null || name.isEmpty()) {
             return null;
         }
-        VirtualLink vl = VirtualLink.valueOf(name, bag, priority, maxLength);
+	VirtualLink vl = RCVirtualLink.valueOf(name, bag, priority, maxLength);
         this.getFlows().add(vl);
         return vl;
     }
     
+    public final VirtualLink addAVBVirtualLink(final String name, final double bag, final AVBClass avbClass,
+	    final int maxLength) {
+	if (name == null || name.isEmpty()) {
+	    return null;
+	}
+	VirtualLink vl = AVBVirtualLink.valueOf(name, bag, avbClass, maxLength);
+	this.getFlows().add(vl);
+	return vl;
+    }
+
     /**
      * all VLs in the network.
      * @return {@link ArrayList} of all VLs
      */
     public final List<VirtualLink> getVirtualLinks() {
-        final List<VirtualLink> result = new ArrayList<VirtualLink>();
+	final List<VirtualLink> result = new ArrayList<VirtualLink>();
         for (final var flow : this.getFlows()) {
-            result.add((VirtualLink)flow);
+	    result.add((VirtualLink) flow);
         }
         return result;
     }
